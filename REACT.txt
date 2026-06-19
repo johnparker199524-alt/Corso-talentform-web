@@ -11,4 +11,4 @@ refactor:Riscrittura di codice esistente per migliorarlo
 EOF
 
 git add convenzioni.txt
-git commit -m "docs: aggiunto file guida sulle convenzioni dei commit"
+git commit -m "docs: aggiunto file guida sulle convenzioni dei commit  "
