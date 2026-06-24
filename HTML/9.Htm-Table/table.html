@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tabella Centrata con Bordi</title>
+    <style>
+      /* Stile per le celle: aggiunge il bordo e centra il testo */
+      table th, table td {
+        border: 1px solid #0f0e0e; /* Riga grigia continua di 1 pixel */
+        text-align: center;
+        padding: 10px; 
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1 style="text-align: center; font-family: Arial, sans-serif; color: #333;">Tabella</h1>
+    </header>
+    <main>
+        <table style="width: 70%; margin: 0 auto; border-collapse: collapse; font-family: Arial, sans-serif;">
+            <thead>
+                <colgroup>
+                    <col style="background-color: rgb(239, 255, 14)" />
+                    <col style="background-color: rgb(20, 235, 49)" />
+                    <col style="background-color: rgb(0, 251, 255)" />
+                    <col style="background-color: rgb(223, 223, 223)" />
+                    <col style="background-color: rgb(235, 120, 20)" />
+                </colgroup>
+                <tr>
+                    <th>Colonna 1</th>
+                    <th>Colonna 2</th>
+                    <th>Colonna 3</th>
+                    <th>Colonna 4</th>
+                    <th>Colonna 5</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Riga 1, Colonna 1</td>
+                    <td>Riga 1, Colonna 2</td>
+                    <td>Riga 1, Colonna 3</td>
+                    <td>Riga 1, Colonna 4</td>
+                    <td>Riga 1, Colonna 5</td>
+                </tr>
+                <tr>
+                    <td>Riga 2, Colonna 1</td>
+                    <td>Riga 2, Colonna 2</td>
+                    <td>Riga 2, Colonna 3</td>
+                    <td>Riga 2, Colonna 4</td>
+                    <td>Riga 2, Colonna 5</td>
+                </tr>
+                <tr>
+                    <td>Riga 3, Colonna 1</td>
+                    <td>Riga 3, Colonna 2</td>
+                    <td>Riga 3, Colonna 3</td>
+                    <td>Riga 3, Colonna 4</td>
+                    <td>Riga 3, Colonna 5</td>
+                </tr>
+                <tr>
+                    <td>Riga 4, Colonna 1</td>
+                    <td>Riga 4, Colonna 2</td>
+                    <td>Riga 4, Colonna 3</td>
+                    <td>Riga 4, Colonna 4</td>
+                    <td>Riga 4, Colonna 5</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+  </body>
+</html>

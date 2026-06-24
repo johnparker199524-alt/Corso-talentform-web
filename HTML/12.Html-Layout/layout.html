@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Struttura Semantica - John Italia</title>
+    <style>
+      /* --- BASE E LAYOUT --- */
+      body {
+        font-family: 'Segoe UI', system-ui, sans-serif;
+        background-color: #0f172a; /* Fondo scuro coerente con i player */
+        color: #f1f5f9;
+        margin: 0;
+        padding: 0;
+      }
+
+      header.main-header {
+        background: rgba(30, 41, 59, 0.7);
+        backdrop-filter: blur(10px);
+        padding: 20px;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      header.main-header h1 {
+        margin: 0;
+        font-size: 1.8rem;
+        color: #3b82f6;
+      }
+
+      /* --- IL TRUCCO DEL CORPO CENTRALE --- */
+      /* Usiamo Flexbox per affiancare il contenuto principale e l'aside */
+      .page-layout {
+        display: flex;
+        max-width: 1100px;
+        margin: 40px auto;
+        padding: 0 20px;
+        gap: 30px; /* Spazio tra contenuto e aside */
+        box-sizing: border-box;
+      }
+
+      /* --- CONTENUTO PRINCIPALE (Prende più spazio) --- */
+      main {
+        flex: 3; /* Occupa i 3/4 dello spazio */
+      }
+
+      section {
+        background: rgba(30, 41, 59, 0.4);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        padding: 25px;
+        border-radius: 16px;
+        margin-bottom: 25px;
+      }
+
+      section h2 {
+        color: #f8fafc;
+        margin-top: 0;
+        border-bottom: 2px solid #3b82f6;
+        padding-bottom: 8px;
+      }
+
+      article {
+        background: rgba(15, 23, 42, 0.6);
+        padding: 20px;
+        border-radius: 12px;
+        margin-top: 15px;
+      }
+
+      article h4 {
+        margin: 0 0 10px 0;
+        color: #a855f7; /* Viola per i titoli degli articoli */
+        font-size: 1.2rem;
+      }
+
+      /* --- IL TAG ASIDE (La barra laterale) --- */
+      aside {
+        flex: 1; /* Occupa 1/4 dello spazio */
+        background: rgba(30, 41, 59, 0.8); /* Leggermente più evidente */
+        border: 1px solid rgba(59, 130, 246, 0.2); /* Bordo azzurrato */
+        padding: 25px;
+        border-radius: 16px;
+        height: fit-content; /* Si adatta alla lunghezza del suo testo */
+      }
+
+      aside h3 {
+        color: #3b82f6;
+        margin-top: 0;
+        font-size: 1.3rem;
+      }
+
+      aside ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      aside li {
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      aside li:last-child {
+        border-bottom: none;
+      }
+
+      aside a {
+        color: #94a3b8;
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+
+      aside a:hover {
+        color: #3b82f6;
+      }
+
+      /* --- RESPONSIVE --- */
+      /* Se lo schermo è piccolo (smartphone), incolonna tutto */
+      @media (max-width: 768px) {
+        .page-layout {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+
+    <header class="main-header">
+      <h1>Piattaforma Corsi - John Italia</h1>
+    </header>
+
+    <div class="page-layout">
+
+      <main>
+        
+        <section>
+          <h2>Sezione Video</h2>
+          
+          <article>
+            <h4>Lezione 1: Introduzione agli Operatori</h4>
+            <p>In questo video esploreremo i concetti fondamentali degli operatori logici e matematici.</p>
+            </article>
+
+          <article>
+            <h4>Lezione 2: Operatori Avanzati</h4>
+            <p>Approfondimento sulle strutture di controllo e comparazioni complesse.</p>
+          </article>
+        </section>
+
+        <section>
+          <h2>Sezione Audio</h2>
+          <article>
+            <h4>Podcast: Il Nuotatore</h4>
+            <p>Ascolta l'estratto audio correlato alla lezione odierna.</p>
+            </article>
+        </section>
+
+      </main>
+
+      <aside>
+        <h3>Risorse Utili</h3>
+        <p>Contenuti extra correlati alle lezioni di John Italia:</p>
+        <ul>
+          <li><a href="#">📂 Scarica il codice sorgente</a></li>
+          <li><a href="#">📝 Esercizi sugli Operatori</a></li>
+          <li><a href="#">💬 Gruppo di supporto studenti</a></li>
+        </ul>
+        
+        <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 20px 0;">
+        
+        <h3>Info Autore</h3>
+        <p style="font-size: 0.9rem; color: #94a3b8; margin: 0;">
+          Pagina curata da John Italia. Nuovi video ogni martedì e giovedì.
+        </p>
+      </aside>
+
+    </div>
+
+  </body>
+</html>

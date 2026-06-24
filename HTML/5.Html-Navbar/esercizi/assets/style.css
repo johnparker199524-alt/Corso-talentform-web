@@ -1,222 +1,288 @@
 /* ==========================================================================
-   1. RESET & VARIABILI GENERALI
+   1. RESET, CONFIGURAZIONE TIPOGRAFICA E VARIABILI GENERALI (Custom Properties)
    ========================================================================== */
 :root {
-    --bg-color: #0f172a;
-    --card-bg: #1e293b;
-    --text-color: #f8fafc;
-    --text-muted: #94a3b8;
-    --accent-color: #38bdf8;
-    --accent-hover: #0ea5e9;
-    --border-radius: 12px;
-    --transition: all 0.3s ease;
+    /* Variabili CSS globali per garantire coerenza cromatica e facilitare la manutenzione.
+       Modificando un valore qui, si aggiornerà automaticamente in tutto il foglio di stile. */
+    --bg-color: #0f172a;       /* Sfondo scuro principale (Slate 900) */
+    --card-bg: #1e293b;        /* Sfondo delle card e dei contenitori (Slate 800) */
+    --text-color: #f8fafc;     /* Colore del testo principale (quasi bianco) */
+    --text-muted: #94a3b8;     /* Colore per testi secondari o descrizioni (grigio chiaro) */
+    --accent-color: #38bdf8;   /* Colore di accento primario (azzurro Sky) */
+    --accent-hover: #0ea5e9;   /* Colore di accento al passaggio del mouse (hover) */
+    --border-radius: 12px;     /* Smussatura angoli standard per i contenitori */
+    --transition: all 0.3s ease; /* Transizione fluida predefinita per le animazioni (0.3 secondi) */
 }
 
+/* Reset Globale: Rimuove i margini e i padding di default dei browser e imposta il box-sizing */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Include padding e bordi nel calcolo della larghezza/altezza totale dell'elemento */
 }
 
+/* Stili strutturali per l'intero corpo della pagina */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    line-height: 1.6;
-    padding-bottom: 40px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Font pulito e moderno */
+    background-color: var(--bg-color); /* Utilizza la variabile dello sfondo scuro */
+    color: var(--text-color);          /* Applica il testo chiaro di default */
+    line-height: 1.6;                  /* Ottimizza l'altezza della riga per una migliore leggibilità */
+    padding-bottom: 40px;              /* Spazio di sicurezza in fondo alla pagina */
 }
 
+/* Regole globali per i link ipertestuali */
 a {
-    color: inherit;
-    text-decoration: none;
-    transition: var(--transition);
+    color: inherit;                    /* Eredita il colore del testo del contenitore padre */
+    text-decoration: none;             /* Rimuove la sottolineatura standard dei link */
+    transition: var(--transition);     /* Prepara il link per animazioni fluide sui cambi di stato (es. hover) */
 }
+
 
 /* ==========================================================================
-   2. HEADER & NAVIGAZIONE (Migliorato e Orizzontale)
+   2. HEADER & NAVIGAZIONE (Barra Superiore Fissa e Orizzontale)
    ========================================================================== */
 header {
-    background-color: #1e293b; /* Colore solido e pulito, si integra con il design scuro */
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-    border-bottom: 2px solid var(--accent-color); /* Una linea sottile color ciano sotto la barra */
-    width: 100%;
+    background-color: #1e293b;         /* Colore solido coerente con lo sfondo delle card */
+    position: sticky;                  /* Mantiene l'header bloccato in alto durante lo scrolling */
+    top: 0;                            /* Specifica il punto di ancoraggio del blocco sticky (inizio pagina) */
+    z-index: 1000;                     /* Assicura che la barra di navigazione rimanga sopra a qualsiasi altro contenuto */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); /* Ombra inferiore per dare profondità ed effetto fluttuante */
+    border-bottom: 2px solid var(--accent-color); /* Sottile linea inferiore azzurra di separazione */
+    width: 100%;                       /* Estende l'header per tutta la larghezza dello schermo */
 }
 
+/* Contenitore interno della navigazione per limitare la larghezza massima del testo */
 nav {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    max-width: 1200px;                 /* Allinea la larghezza massima a quella del contenuto principale */
+    margin: 0 auto;                    /* Centra il blocco orizzontalmente all'interno dello schermo */
+    padding: 0 20px;                   /* Padding laterale per evitare che i link tocchino i bordi sui display piccoli */
 }
 
+/* Configurazione dell'elenco dei link tramite Flexbox */
 nav ul {
-    display: flex;
-    justify-content: center; /* Centra i link orizzontalmente. Usa 'flex-end' se li vuoi a destra */
-    align-items: center;
-    list-style: none;
-    height: 70px; /* Altezza fissa e comoda per la barra di navigazione */
-    gap: 30px; /* Spazio uniforme tra i vari elementi della lista */
+    display: flex;                     /* Attiva il modello Flexbox per disporre gli elementi in linea */
+    justify-content: center;           /* Centra i link orizzontalmente */
+    align-items: center;               /* Centra i link verticalmente all'interno dell'altezza stabilita */
+    list-style: none;                  /* Rimuove i pallini/punti elenco della lista */
+    height: 70px;                      /* Altezza fissa della barra di navigazione */
+    gap: 30px;                         /* Spazio uniforme di 30px tra un link e l'altro */
 }
 
 nav ul li {
-    display: inline-block;
+    display: inline-block;             /* Assicura la disposizione corretta degli elementi della lista */
 }
 
+/* Stile dei singoli pulsanti/link di navigazione */
 nav ul li a {
-    display: block; /* Rende l'intero box del link cliccabile, non solo il testo */
-    font-weight: 600;
-    font-size: 1.1rem;
-    padding: 10px 20px;
-    color: var(--text-color);
-    border-radius: 8px; /* Angoli leggermente smussati per l'effetto hover */
-    transition: var(--transition);
+    display: block;                    /* Estende l'area cliccabile a tutto il volume del padding */
+    font-weight: 600;                  /* Testo leggermente in grassetto (Semi-bold) */
+    font-size: 1.1rem;                 /* Dimensione del carattere leggermente maggiorata */
+    padding: 10px 20px;                /* Spazio interno per dare la forma di un pulsante */
+    color: var(--text-color);          /* Colore chiaro del testo */
+    border-radius: 8px;                /* Angoli arrotondati del pulsante */
+    transition: var(--transition);     /* Transizione fluida per l'effetto hover */
 }
 
-/* Effetto Hover moderno: crea un bottone illuminato anziché solo la linea */
+/* Effetto al passaggio del mouse sui link della barra di navigazione */
 nav ul li a:hover {
-    color: var(--bg-color);
-    background-color: var(--accent-color);
-    box-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
-    transform: translateY(-2px); /* Un leggero scatto verso l'alto quando ci passi sopra */
+    color: var(--bg-color);            /* Inverte il colore del testo facendolo diventare scuro */
+    background-color: var(--accent-color); /* Il background diventa l'azzurro di accento */
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.5); /* Effetto bagliore (glow) attorno al pulsante */
+    transform: translateY(-2px);       /* Effetto micro-interazione: sposta il pulsante leggermente verso l'alto */
 }
+
+
 /* ==========================================================================
-   3. TITOLI E TESTI PRINCIPALI
+   3. TITOLI E TESTI INTRODUTTIVI GLOBAL
    ========================================================================== */
 h1 {
-    text-align: center;
-    margin-top: 2.5rem;
-    font-size: 2.5rem;
-    color: var(--text-color);
+    text-align: center;                /* Centra il titolo principale della pagina */
+    margin-top: 2.5rem;                /* Spazio generoso sopra il titolo per distanziarlo dall'header fisso */
+    font-size: 2.5rem;                 /* Dimensione impattante del carattere */
+    color: var(--text-color);          /* Colore del testo chiaro */
 }
 
+/* Paragrafi descrittivi posizionati direttamente sotto i titoli principali */
 body > p {
-    text-align: center;
-    max-width: 800px;
-    margin: 0.5rem auto 2.5rem auto;
-    color: var(--text-muted);
-    font-size: 1.1rem;
-    padding: 0 20px;
+    text-align: center;                /* Centra il testo del paragrafo descrittivo */
+    max-width: 800px;                  /* Limita la larghezza massima per evitare righe di testo troppo lunghe e stancanti */
+    margin: 0.5rem auto 2.5rem auto;   /* Centra il blocco nello schermo (auto) e gestisce i margini sopra/sotto */
+    color: var(--text-muted);          /* Usa il grigio desaturato per creare gerarchia visiva rispetto all'H1 */
+    font-size: 1.1rem;                 /* Leggermente più grande del testo standard */
+    padding: 0 20px;                   /* Impedisce al testo di toccare i bordi dello schermo su smartphone */
 }
+
 
 /* ==========================================================================
-   4. LAYOUT MAIN & CARDS (Home, Framework, Linguaggi)
+   4. LAYOUT MAIN & GRIGLIA CARDS (Home, Pagine Elenco)
    ========================================================================== */
+/* Il motore principale della struttura responsive: la griglia */
 .main-content {
-    display: grid;
+    display: grid;                     /* Attiva il motore CSS Grid Layout */
+    /* Crea colonne dinamiche e responsive senza bisogno di media-queries:
+       - auto-fit: riempie lo spazio disponibile inserendo quante più colonne possibili
+       - minmax(300px, 1fr): ogni colonna deve essere larga almeno 300px e al massimo una quota equa dello spazio (1 frazione) */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    gap: 30px;                         /* Spaziatura uniforme (sia verticale che orizzontale) tra le card */
+    max-width: 1200px;                 /* Ampiezza massima dell'area dei contenuti */
+    margin: 0 auto;                    /* Centra perfettamente l'intero blocco della griglia nello schermo */
+    padding: 0 20px;                   /* Protezione di padding laterale per i dispositivi mobili */
+}
+
+/* Stile per i contenitori strutturali delle schede (Card) delle varie sezioni */
+.container, .container-framework, .container-linguaggi {
+    background-color: var(--card-bg);  /* Colore di sfondo scuro di contrasto rispetto al body */
+    padding: 30px;                     /* Spazio interno tra i bordi della card e il contenuto */
+    border-radius: var(--border-radius); /* Smussatura degli angoli della card */
+    border: 1px solid #334155;         /* Sottile bordo interno per evidenziare i blocchi (Slate 700) */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3); /* Ombra morbida sottostante per creare rilievo visivo */
+}
+
+/* Titoli interni alle card */
+.container h2, .container-framework h2, .container-linguaggi h2 {
+    color: var(--accent-color);        /* Applica il colore azzurro ai sottotitoli delle sezioni */
+    margin-bottom: 15px;               /* Spazio inferiore per separare il titolo dal testo sottostante */
+    font-size: 1.6rem;
+}
+
+/* Gestione dei contenitori delle immagini (Elementi strutturali Figure) */
+.card figure {
+    margin-top: 20px;                  /* Distanza tra la descrizione e l'immagine */
+    overflow: hidden;                  /* Taglia qualsiasi contenuto che ecceda i limiti (fondamentale per lo zoom dell'immagine) */
+    border-radius: 8px;                /* Smussa gli angoli dell'area dell'immagine */
+    position: relative;                /* Imposta il punto di riferimento spaziale per la dicitura figcaption in assoluto */
+}
+
+/* Stile delle immagini all'interno delle schede */
+.card img {
+    width: 100%;                       /* L'immagine occupa sempre tutto lo spazio orizzontale della card */
+    height: 200px;                     /* Altezza fissa uniforme per tutte le immagini della griglia */
+    object-fit: cover;                 /* Ritaglia e adatta l'immagine proporzionalmente senza distorcerla o schiacciarla */
+    display: block;                    /* Elimina lo spazio vuoto nativo inferiore delle immagini inline */
+    border-radius: 8px;
+    transition: var(--transition);     /* Transizione fluida per l'effetto di zoom */
+}
+
+/* Animazione di zoom sull'immagine quando l'utente passa il mouse sopra l'area del link */
+.card figure a:hover img {
+    transform: scale(1.05);            /* Ingrandisce l'immagine del 5% mantenendo i bordi rifilati grazie a overflow:hidden */
+}
+
+/* Dicitura in sovrimpressione posizionata sopra l'immagine */
+figcaption {
+    background: rgba(15, 23, 42, 0.8); /* Sfondo scuro semitrasparente per rendere leggibile il testo sopra l'immagine */
+    position: absolute;                /* Posizionamento assoluto svincolato dal flusso del testo */
+    bottom: 0;                         /* Blocca la didascalia esattamente sul bordo inferiore della figura */
+    width: 100%;                       /* Estende la didascalia per tutta la larghezza dell'immagine */
+    text-align: center;                /* Centra il testo descrittivo */
+    padding: 8px;                      /* Spazio interno */
+    font-size: 0.9rem;
+    font-weight: bold;                 /* Testo in grassetto */
+}
+
+/* Liste di Collegamento / Tag (Pulsanti all'interno di Framework e Linguaggi) */
+.lista {
+    list-style: none;                  /* Rimuove i punti elenco */
+    margin-top: 20px;                  /* Distanza dall'elemento soprastante */
+    display: flex;                     /* Dispone i tag in linea tramite flexbox */
+    gap: 15px;                         /* Spazio orizzontale e verticale tra un tag e l'altro */
+    flex-wrap: wrap;                   /* Se i pulsanti non entrano in una riga, vanno a capo automaticamente senza rompersi */
+}
+
+/* Stile dei singoli bottoni/tag della lista */
+.lista li a {
+    display: inline-block;             /* Permette la corretta gestione di padding e trasformazioni geometriche */
+    background-color: #334155;         /* Grigio intermedio di sfondo per il tag */
+    padding: 10px 20px;                /* Padding per dare l'aspetto tipico di un "pill-button" (bottone a pillola) */
+    border-radius: 30px;               /* Arrotondamento massimo per renderlo ovale */
+    font-weight: 600;                  /* Testo marcato */
+    border: 1px solid transparent;     /* Crea un bordo trasparente preventivo per evitare scatti grafici all'hover */
+}
+
+/* Effetto hover sui bottoni/tag di scelta */
+.lista li a:hover {
+    background-color: var(--accent-color); /* Lo sfondo passa ad azzurro */
+    color: var(--bg-color);            /* Il testo diventa scuro per contrasto */
+    transform: translateY(-2px);       /* Il bottone si solleva leggermente */
+    box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3); /* Aggiunge un'ombra sfumata azzurra */
+}
+
+
+/* ==========================================================================
+   5. PAGINE DI DETTAGLIO (Scheda Singolo Linguaggio o Framework)
+   ========================================================================== */
+/* Contenitore centrale focalizzato per le informazioni di dettaglio */
+.detail-container {
+    max-width: 800px;                  /* Layout più stretto e concentrato per facilitare la lettura della scheda */
+    margin: 40px auto;                 /* Centra il box e stacca lo stesso da header e footer */
+    padding: 40px;                     /* Ampio spazio di respiro interno */
+    background-color: var(--card-bg);  /* Sfondo coerente con il design */
+    border-radius: var(--border-radius);
+    border: 1px solid #334155;
+    text-align: center;                /* Centra tutti i testi, i pulsanti e le immagini all'interno */
+}
+
+/* Immagine/Logo centrale nelle pagine di dettaglio */
+.detail-img {
+    width: 150px;                      /* Dimensione fissa calibrata per i loghi (Java, PHP, ecc.) */
+    height: 150px;
+    object-fit: contain;               /* L'immagine viene ridimensionata per intero senza ritagli, mantenendo le proporzioni native */
+    margin: 20px auto;                 /* Centra l'immagine nel blocco e dà spazio sopra e sotto */
+    display: block;                    /* Trasforma in blocco per applicare correttamente il margin auto */
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.5)); /* Applica un'ombra sagomata che segue i contorni trasparenti del logo PNG */
+}
+
+/* Pulsante per tornare indietro alle liste principali */
+.btn-back {
+    display: inline-block;             /* Struttura a blocco in linea per gestire i margini e i vettori */
+    margin-top: 30px;                  /* Allontana il pulsante dalla descrizione soprastante */
+    padding: 10px 25px;                /* Dimensione bilanciata del tasto */
+    background-color: transparent;     /* Fondo vuoto (Stile outline/Ghost button) */
+    border: 2px solid var(--accent-color); /* Bordo colorato evidente azzurro */
+    color: var(--accent-color);        /* Colore del testo azzurro */
+    border-radius: 30px;               /* Forma a pillola arrotondata */
+    font-weight: bold;                 /* Testo in pieno grassetto */
+}
+
+/* Inversione di colore al passaggio del mouse sul pulsante indietro */
+.btn-back:hover {
+    background-color: var(--accent-color); /* Riempimento completo del bottone in azzurro */
+    color: var(--bg-color);            /* Il testo diventa scuro */
+}
+
+
+/* ==========================================================================
+   6. NUOVI ELEMENTI: STRUTTURA AD ASIDE INTEGRATO & FOOTER GENERALE
+   ========================================================================== */
+/* Wrapper per l'aside: assicura che il blocco promozionale segua l'allineamento
+   orizzontale preciso del resto del sito (1200px massimi, centrato) senza subire vincoli */
+.main-wrapper {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-.container, .container-framework, .container-linguaggi {
-    background-color: var(--card-bg);
-    padding: 30px;
-    border-radius: var(--border-radius);
-    border: 1px solid #334155;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+/* Blocco Aside (Ex stile inline convertito in classe CSS pulita e ottimizzata) */
+.promo-aside {
+    background-color: #a52a2a;         /* Colore Marrone (Brown) come da richiesta originaria */
+    color: #f5f5dc;                    /* Colore di contrasto Beige per garantire la leggibilità del testo */
+    padding: 30px;                     /* Spazio interno abbondante per valorizzare il messaggio promozionale */
+    margin-top: 40px;                  /* Distanza di sicurezza dalla fine della griglia dei contenuti superiori */
+    border: 1px solid #ffffff;         /* Primo bordo lineare bianco */
+    outline: 4px double #ffffff;       /* Secondo bordo esterno in stile doppio ("double") bianco, distanziato dal primo */
+    border-radius: var(--border-radius); /* Mantiene gli angoli arrotondati coerenti con le card superiori */
+    text-align: center;                /* Centra il messaggio promozionale all'interno */
+    font-weight: bold;                 /* Rende il testo marcato per scopi di marketing/evidenza */
 }
 
-.container h2, .container-framework h2, .container-linguaggi h2 {
-    color: var(--accent-color);
-    margin-bottom: 15px;
-    font-size: 1.6rem;
-}
-
-/* Gestione Immagini e Figure */
-.card figure {
-    margin-top: 20px;
-    overflow: hidden;
-    border-radius: 8px;
-    position: relative;
-}
-
-.card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    display: block;
-    border-radius: 8px;
-    transition: var(--transition);
-}
-
-.card figure a:hover img {
-    transform: scale(1.05);
-}
-
-figcaption {
-    background: rgba(15, 23, 42, 0.8);
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-    padding: 8px;
-    font-size: 0.9rem;
-    font-weight: bold;
-}
-
-/* Liste di Collegamento */
-.lista {
-    list-style: none;
-    margin-top: 20px;
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-.lista li a {
-    display: inline-block;
-    background-color: #334155;
-    padding: 10px 20px;
-    border-radius: 30px;
-    font-weight: 600;
-    border: 1px solid transparent;
-}
-
-.lista li a:hover {
-    background-color: var(--accent-color);
-    color: var(--bg-color);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3);
-}
-
-/* ==========================================================================
-   5. PAGINE DETTAGLIO (Singolo Linguaggio / Framework)
-   ========================================================================== */
-.detail-container {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 40px;
-    background-color: var(--card-bg);
-    border-radius: var(--border-radius);
-    border: 1px solid #334155;
-    text-align: center;
-}
-
-.detail-img {
-    width: 150px;
-    height: 150px;
-    object-fit: contain;
-    margin: 20px auto;
-    display: block;
-    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.5));
-}
-
-.btn-back {
-    display: inline-block;
-    margin-top: 30px;
-    padding: 10px 25px;
-    background-color: transparent;
-    border: 2px solid var(--accent-color);
-    color: var(--accent-color);
-    border-radius: 30px;
-    font-weight: bold;
-}
-
-.btn-back:hover {
-    background-color: var(--accent-color);
-    color: var(--bg-color);
+/* Struttura del Footer globale posizionato in fondo a tutte le pagine */
+footer {
+    text-align: center;                /* Centra il testo dei diritti riservati e della partita IVA */
+    color: #a52a2a;                    /* Colore Marrone (Brown) coerente con la logica cromatica del nuovo blocco */
+    /* Configurazione tipografica specifica richiesta originariamente per il blocco dei crediti */
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    font-size: 0.85rem;                /* Dimensione ridotta (smaller) rispetto al testo standard */
+    margin-top: 60px;                  /* Sostituisce il rischioso 20% inline con un margine fisso di 60px per evitare spazi vuoti giganteschi */
+    padding: 20px 0;                   /* Spazio interno sopra e sotto il testo per isolarlo dal fondo pagina */
+    border-top: 1px solid #334155;     /* Sottile linea scura superiore di separazione visiva per chiudere la pagina */
 }
