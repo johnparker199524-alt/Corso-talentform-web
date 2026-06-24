@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Riassunto</title>
+  </head>
+  <body style="text-align: center; background-color: blueviolet">
+    <header>
+      <h1>riassunto</h1>
+    </header>
+    <main>
+      <h2>tabella con materia</h2>
+      <section style="display: flex; justify-content: center">
+        <table
+          style="width: 550px; border: 2px solid black; text-align: center"
+        >
+          <thead>
+            <th>Materia</th>
+            <th>Vuoto</th>
+          </thead>
+          <colgroup>
+            <col style="background-color: blue" />
+            <col style="background-color: rgb(157, 255, 0)" />
+          </colgroup>
+          <tbody>
+            <tr>
+              <td>Inglese</td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <td>Inglese</td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <td>Matematica</td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <td>Francese</td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <td>Sport</td>
+              <td>5</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- end fist section -->
+      <h2>form di login</h2>
+
+      <section style="text-align: center">
+        <form
+          action=""
+          style="
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto;
+          "
+        >
+          <label for="nome">Nome</label>
+          <input
+            type="text"
+            id="nome"
+            name="nome"
+            placeholder="Inserisci il tuo nome"
+            required
+            style="padding: 8px; width: 100%; box-sizing: border-box"
+          />
+
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Inserisci la password"
+            required
+            style="padding: 8px; width: 100%; box-sizing: border-box"
+          />
+
+          <input
+            type="submit"
+            value="Invia"
+            style="padding: 10px; cursor: pointer; margin-top: 5px"
+          />
+        </form>
+      </section>
+      <!-- end section 2-->
+      <h2>checkbox e menu tendina</h2>
+      <section>
+        <input type="checkbox" name="nuoto" id="" />
+        <label for="nuoto">nuoto</label>
+        <input type="checkbox" name="tennis" id="" />
+        <label for="tennis">tennis</label>
+        <input type="checkbox" name="calcio" id="" />
+        <label for="calcio">calcio</label>
+      </section>
+      <!-- end section 3 -->
+             <h2>Seleziona la tua squadra</h2>
+      <section>
+              <select name="tendina" id="">
+                <option value="italia">Italia</option>
+                <option value="spagna">Spagnaa</option>
+                <option value="germania">Germania</option>
+                <option value="francia">Francia</option>
+              </select>
+      </section>
+    </main>
+  </body>
+</html>
