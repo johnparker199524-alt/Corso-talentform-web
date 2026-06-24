@@ -1,21 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>pagina finale</title>
-</head>
+    <link rel="stylesheet" href="style.css">
+    <title>Pagina Principale</title>
+    </head>
 <body>
-    <header>
-      <h1> Pagina Principale</h1>  
-    </header>
-     <main style="text-align: center;">
-        <h1>Galleria foto</h1>
-       <section>
-        
-       </section>
 
-     </main>
+    <header>
+        <h1>Pagina Principale</h1>  
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#">Codice</a></li>
+            <li><a href="#">Sicurezza</a></li>
+            <li><a href="#">Hacking</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section>
+            <h2>Galleria foto</h2>
+            <div class="img-container">
+                <img src="../assets/mare.jpg" alt="mare">
+                <p><em>Il mare libera la tua natura</em></p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Tabella di rappresentazione</h2>
+            <table>
+                <colgroup>
+                    <col style="background-color: rgba(200, 255, 0, 0.3);">
+                    <col style="background-color: rgba(0, 110, 255, 0.2);">
+                    <col style="background-color: rgba(255, 174, 0, 0.3);">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>Certificazione</th>
+                        <th>Costo</th>
+                        <th>Livello</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Oracle Java</td>
+                        <td>300$</td>
+                        <td>Esperto</td>
+                    </tr>
+                    <tr>
+                        <td>Ec-Council (CEH)</td>
+                        <td>1000$</td>
+                        <td>Esperto</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>Registrati</h2>
+            <form class="register-form" action="#">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome" placeholder="Inserisci il tuo nome" required>
+                
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Inserisci la password" required>
+                
+                <input type="submit" value="Invia" class="submit-btn">
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>© By Bomologa Assaguina Moise 2026</p>
+    </footer>
 
 </body>
 </html>
