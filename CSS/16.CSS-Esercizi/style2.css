@@ -1,0 +1,207 @@
+/* ==========================================================================
+   1. Reset e Variabili di Design (Clean Architecture)
+   ========================================================================== */
+:root {
+    --primary-color: #007bff;
+    --transition-bg: #f0ce0c;
+    --transition-hover: #ff4500;
+    --radius-bg: #04ff2e;
+    --anim-start: #ff7403;
+    --anim-end: #822aa5;
+    --card-bg: rgba(255, 255, 255, 0.92);
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    
+    /* Configurazione avanzata dello sfondo */
+    background-image: url("./tramoo.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #212529;
+}
+
+/* ==========================================================================
+   2. Struttura Layout Semantica (Card Stilizzate)
+   ========================================================================== */
+.main-header {
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    margin-bottom: 40px;
+}
+
+.main-header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.card {
+    background-color: var(--card-bg);
+    margin-bottom: 30px;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px); /* Effetto vetro sfocato molto moderno */
+    text-align: center;
+}
+
+.card h2 {
+    font-size: 1.4rem;
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: #495057;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ==========================================================================
+   3. Menu di Navigazione dei Link
+   ========================================================================== */
+.nav-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.nav-links a {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #343a40;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: #6f42c1; /* Blueviolet coordinato */
+    color: #ffffff;
+}
+
+.nav-links a:visited {
+    color: #6c757d; /* Grigio professionale anziché marrone invasivo */
+}
+
+/* ==========================================================================
+   4. Gestione Posizionamento Senza Flex (Z-Index Corretto)
+   ========================================================================== */
+.container-allineamento {
+    position: relative;
+    height: 300px; /* Spazio protetto per i blocchi assoluti */
+}
+
+#principale {
+    position: absolute;
+    height: 200px;
+    width: 300px;
+    background-color: #e63946;
+    border-radius: 8px;
+    left: 50%;
+    transform: translateX(-50%); /* Centramento orizzontale geometrico perfetto */
+    z-index: 1;
+}
+
+#index {
+    position: relative;
+    height: 120px;
+    width: 180px;
+    background-color: #2a9d8f;
+    color: #ffffff;
+    font-size: 0.9rem;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 6px;
+    left: 15px;
+    top: 15px;
+    z-index: 2; /* Sovrapposto sopra a #principale */
+}
+
+/* ==========================================================================
+   5. Transizioni Ottimizzate (Hardware-Accelerated)
+   ========================================================================== */
+#transition {
+    height: 80px;
+    width: 280px;
+    background-color: var(--transition-bg);
+    margin: 0 auto;
+    border-radius: 6px;
+    line-height: 80px;
+    font-weight: bold;
+    cursor: pointer;
+    box-sizing: border-box;
+    
+    /* Ottimizzazione delle performance combinando i canali di trasformazione */
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease, border 0.2s ease;
+}
+
+#transition:hover {
+    background-color: var(--transition-hover);
+    color: #ffffff;
+    border: 3px solid #2a9d8f;
+    transform: scale(1.08); /* Sostituito l'allargamento della width con lo scale (GPU) */
+}
+
+/* ==========================================================================
+   6. Border Radius & Layout Strutturale
+   ========================================================================== */
+.radius-showcase {
+    width: 280px;
+    height: 100px;
+    background-color: var(--radius-bg);
+    margin: 0 auto;
+    border-radius: 20px;
+    border: 3px solid var(--transition-hover);
+    line-height: 100px;
+    font-weight: bold;
+}
+
+/* ==========================================================================
+   7. Animazioni non-bloccanti tramite GPU
+   ========================================================================== */
+#animation {
+    width: 280px;
+    height: 80px;
+    background-color: var(--anim-start);
+    color: #ffffff;
+    margin: 0 auto;
+    border-radius: 40px;
+    line-height: 80px;
+    font-weight: bold;
+    
+    /* Configurazione dell'animazione fluida */
+    animation: smoothPulse 8s infinite ease-in-out;
+}
+
+@keyframes smoothPulse {
+    0% {
+        background-color: var(--anim-start);
+        transform: scale(1);
+    }
+    50% {
+        background-color: var(--anim-end);
+        transform: scale(1.04); /* Pulsazione minima ed elegante adatta a un layout pro */
+    }
+    100% {
+        background-color: var(--anim-start);
+        transform: scale(1);
+    }
+}

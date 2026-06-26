@@ -1,0 +1,30 @@
+body{
+    box-sizing: border-box;
+    max-width: 100%;
+    margin:0 auto;
+    padding:20px;
+    text-align: center;
+
+}
+.p{
+    height: 200px;
+    width: 400px;
+    background-color: aqua;
+    border: dotted;
+}
+.s{
+    height: 200px;
+    width: 400px;
+    background-color: aqua;
+    border: dashed;
+}
+.t{
+    height: 200px;
+    width: 400px;
+    background-color: rgb(0, 255, 149);
+    border: 1px solid  red;
+}
+div{
+    text-align: center;
+    margin-bottom: 5%;
+}

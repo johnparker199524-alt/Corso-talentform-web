@@ -1,0 +1,89 @@
+body{
+    max-width: 80%;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 40px;
+    background-image: url("./tramoo.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 40px;
+}
+
+a:hover{
+    background-color: blueviolet;
+}
+a:visited{
+    background-color: brown;
+}
+a{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 40px;
+}
+ul{
+    list-style: none;
+}
+#principale{
+    position: absolute;
+    height: 200px;
+    width: 300px;
+     background-color: rgb(224, 14, 14);
+      z-index: -1;
+      margin-left: 30%;
+}
+#index{
+    position: relative;
+    height: 150px;
+    width: 200px;
+     background-color: rgb(42, 165, 83);
+     left: 5px;
+     top: 5px;
+       margin-left: 40%;
+    
+}
+#transition{
+    height: 200px;
+    width: 300px;
+     background-color: rgb(240, 206, 12);
+      margin-left: 40%;
+      margin-top: 60px;
+      transition: width 5s;
+          -webkit-transition: width 5s;
+          text-align: center;
+}
+#transition:hover{
+ background-color: orangered;
+            width: 800px;
+            border: 2pt solid green;
+}
+#radius{
+     width: 300px;
+       height: 200px;
+     background-color: #04ff2e;
+      margin-left: 40%;
+      margin-bottom: 5px 0;
+      margin-top: 5px;
+      border-radius: 20px;
+      border: 3px solid orangered;
+
+}
+#animation{
+      width: 300px;
+       height: 200px;
+     background-color: rgb(255, 125, 4);
+      margin-left: 40%;
+      margin-top: 60px;
+      text-align: center;
+       animation: anim 10s;
+    
+}
+@keyframes anim{
+        from{
+              background-color:  rgb(255, 116, 3);
+        }to{
+              background-color: rgb(130, 42, 165);
+        }
+       }
+      
