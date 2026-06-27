@@ -1,3 +1,7 @@
+"use strict";
 let teacher = 'fabio';
 console.log(teacher);
-//# sourceMappingURL=test.js.map
+let john = 'parker';
+console.log(john);
+let Moise = john;
+console.log(Moise);
