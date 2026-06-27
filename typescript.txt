@@ -1,1 +1,2 @@
-//git TypeScript 
+//git TypeScript
+// git push -u origin typescript
