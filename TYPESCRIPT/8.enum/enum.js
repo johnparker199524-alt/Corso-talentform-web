@@ -1,3 +1,4 @@
+"use strict";
 var Color;
 (function (Color) {
     Color[Color["Red"] = 4] = "Red";
@@ -24,4 +25,3 @@ let enumeration = Direction.Down;
 let heterogeneous = HeterogeneousEnum.Yes;
 console.log(enumeration);
 console.log(heterogeneous);
-//# sourceMappingURL=enum.js.map

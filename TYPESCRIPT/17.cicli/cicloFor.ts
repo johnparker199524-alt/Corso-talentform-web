@@ -1,11 +1,12 @@
 for (let i = 0; i < 10; i++) {
   let riga = ""; // Qui accumuliamo gli asterischi del turno attuale
-
+let riga2: string ="riga " + i;
   // Il ciclo gira (i + 1) volte:
   // al turno 0 gira 1 volta, al turno 1 gira 2 volte...
   for (let j = 0; j < i + 1; j++) {
     riga += "#"; // Attacca l'asterisco sulla stessa riga
   }
+  console.log(riga2); // Stampa la riga completa e va a capo per il prossimo turno
 
   console.log(riga); // Stampa la riga completa e va a capo per il prossimo turno
 }
@@ -46,18 +47,26 @@ for (let i = 1; i <= 10; i++) {
 //    console.log(fattoriale);
 
 // stampa il quadrato  dei numeri da 1 a 10
-let quadrato: number = 1;
 for (let i = 1; i <= 10; i++) {
-  quadrato = i * i;
-  console.log(i + "^2 = " + quadrato);
+    const quadrato = i * i;
+    console.log(`${i}^2 = ${quadrato}`); // Più pulito da leggere!
 }
+// let quadrato: number = 1;
+// for (let i = 1; i <= 10; i++) {
+//   quadrato = i * i;
+//   console.log(i + "^2 = " + quadrato);
+// }
 
 // moltipli di 5 da 5 a 100
-for (let i = 5; i <= 100; i++) {
-  if (i % 5 == 0) {
-    console.log(i + " è un moltiplo di 5");
-  }
+// Partiamo da 5 e aumentiamo i di 5 a ogni giro (5, 10, 15, 20...)
+for (let i = 5; i <= 100; i += 5) {
+    console.log(`${i} è un multiplo di 5`);
 }
+// for (let i = 5; i <= 100; i++) {
+//   if (i % 5 == 0) {
+//     console.log(i + " è un moltiplo di 5");
+//   }
+// }
 
 // numeri da 1 a 50 divisibili per 3
 for (let i = 1; i <= 50; i++) {
@@ -65,3 +74,19 @@ for (let i = 1; i <= 50; i++) {
     console.log(i + " è divisibile per 3");
   }
 }
+// scrivi la serie di Fibonarchie dei 12 primi numeri
+let a = 0;
+let b = 1;
+
+for(let i = 2; i <= 12; i++){
+ let prossimo: number = a+b;
+     console.log(`il primo numero è : ${a} `);
+     console.log(`il secondo numero è : ${b} `);
+     console.log(`il prossimo numero è : ${prossimo} `);
+
+    // a = b;
+    // b = prossimo;
+    [a,b] = [b, a+b];// <=> a=b , b= a+b
+    
+}
+
