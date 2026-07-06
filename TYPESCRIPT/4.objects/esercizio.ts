@@ -7,7 +7,9 @@ type Cittadino = {
   citta: string;
   mestiere: string;
 };
+// function  name():type{
 
+// }
 const pers1: Cittadino = {
   nome: "john",
   cognome: "parker",

@@ -1,3 +1,4 @@
+"use strict";
 let tupla;
 tupla = ["tupla", "typescript"];
 console.log(tupla);
@@ -12,4 +13,3 @@ let names = [1, "Steve"];
 //names[0]
 //names[1]
 console.log(names);
-//# sourceMappingURL=tupla.js.map
