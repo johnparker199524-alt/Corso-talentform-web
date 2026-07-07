@@ -1,78 +1,59 @@
 class Car {
-  //public nome:string // proprietà di classe
-  //private cognome:string // incapsulamento accessibili solo all interno della classe
+  // Avendo messo "public" nei parametri, le proprietà 'brand' e 'year' 
+  // vengono create e assegnate automaticamente! Il corpo del costruttore è vuoto.
+  constructor(public brand: string, public year: number) {}
 
-  constructor(public brand: string, public year: number) {
-    // scrittura
-
-    this.brand = brand;
-    this.year = year;
+  public colorCar(): void {
+    console.log("Colore non specificato");
   }
 
-  // metodi di classe
-  public colorCar(): void {}
-
   public fuel(): string {
-    // lettura
-
     return "Diesel";
   }
 }
 
-let cars = new Car("Audi", 2023);
-
-
-
+// L'EREDITARIETÀ: DealerShip eredita tutto ciò che è public (o protected) da Car
 class DealerShip extends Car {
-  // ereditarietà di classe
-
-  garage: string;
-  salesOperator: string;
-  testDrive: string;
+  // Proprietà specifiche di DealerShip
+  public garage: string;
+  public salesOperator: string;
+  public testDrive: string;
 
   constructor(
-    brand: string,
-    year: number,
+    brand: string, // Passati a super()
+    year: number,  // Passati a super()
     garage: string,
     salesOperator: string,
     testDrive: string,
-    readonly id: number
+    readonly id: number // Proprietà creata al volo (readonly)
   ) {
-    super(brand, year);
+    super(brand, year); // Chiama il costruttore di Car (DEVE essere la prima riga)
     this.garage = garage;
     this.salesOperator = salesOperator;
     this.testDrive = testDrive;
   }
 
-  // get
+  // Un normale metodo getter
   public getCarsSold(): number {
-    // polimorfismo
-
     return 25;
   }
 
-  // set
-
-  public getOwner(salesOperator): void {
-    if (this.testDrive == salesOperator) {
-      throw new Error("Not equals");
+  // Il metodo Setter corretto
+  public setTestDriveOperator(newOperator: string): void {
+    if (this.salesOperator === newOperator) {
+      throw new Error("L'operatore del test drive non può essere lo stesso delle vendite!");
     }
+    this.testDrive = newOperator; // Assegnazione corretta
+  }
 
-    this.testDrive = this.testDrive;
+  // POLIMORFISMO: Sovrascriviamo il metodo della classe madre Car!
+  public fuel(): string {
+    return "Elettrica (In concessionaria vendiamo solo queste!)";
   }
 }
 
-let dealer = new DealerShip(
-  "Audi",
-  2024,
-  "Audi",
-  "Sales Operator",
-  "TestDrive",
-  1
-);
+// --- TEST DEL CODICE ---
+let dealer = new DealerShip("Audi", 2026, "Centrale", "Marco Vendite", "Luca Test", 1);
 
-let carsOld = dealer.getCarsSold();
-console.log(carsOld);
-let owner = dealer.brand;
-let year = dealer.year;
-console.log(year);
+console.log(dealer.brand); // Stampa: Audi (ereditato da Car)
+console.log(dealer.fuel());  // Stampa: Elettrica... (Polimorfismo in azione!)
