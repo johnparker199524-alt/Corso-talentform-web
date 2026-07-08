@@ -1,29 +1,60 @@
-// classe astratta
-
-abstract class BankAccount {
-  nameAccount: string;
-
-  constructor(nameAccount: string) {
-    this.nameAccount = nameAccount;
-  }
-
-  abstract getTotalAccount(); // dichiarazione non implementazione
+//ALTRO ESERCIZIO
+abstract class PreventivoMobile {
+  abstract getGiornateMockup(): number;
+  abstract getGiornateDatabase(): number;
+  abstract getGiornateIntegrazioneServiziWeb(): number;
+  abstract getGiornateTestApp(): number;
+  abstract getGiornatePubblicazioneApp(): number;
+  abstract getPreventivoMobile(): number;
 }
-
-class Account extends BankAccount {
-  balance: number;
-
-  constructor(balance: number, nameAccount: string) {
-    super(nameAccount);
-    this.balance = balance;
+class MainPreventivoMobile extends PreventivoMobile {
+  giornateMockup: number;
+  giornateDatabase: number;
+  giornateIntegrazioneServiziWeb: number;
+  giornateTestApp: number;
+  giornatePubblicazioneApp: number;
+  tariffaGiornaliera: number;
+  constructor(
+    giornateMockup: number,
+    giornateDatabase: number,
+    giornateIntegrazioneServiziWeb: number,
+    giornateTestApp: number,
+    giornatePubblicazioneApp: number,
+    tariffaGiornaliera: number,
+  ) {
+    super();
+    this.giornateMockup = giornateMockup;
+    this.giornateDatabase = giornateDatabase;
+    this.giornateIntegrazioneServiziWeb = giornateIntegrazioneServiziWeb;
+    this.giornateTestApp = giornateTestApp;
+    this.giornatePubblicazioneApp = giornatePubblicazioneApp;
+    this.tariffaGiornaliera = tariffaGiornaliera;
   }
-
-  getTotalAccount(firstMovment: number = 100, firstDraw: number = 50): number {
-    return this.balance + firstMovment - firstDraw;
+  getGiornateMockup(): number {
+    return this.tariffaGiornaliera * this.giornateMockup;
+  }
+  getGiornateDatabase(): number {
+    return this.tariffaGiornaliera * this.giornateDatabase;
+  }
+  getGiornateIntegrazioneServiziWeb(): number {
+    return this.tariffaGiornaliera * this.giornateIntegrazioneServiziWeb;
+  }
+  getGiornateTestApp(): number {
+    return this.tariffaGiornaliera * this.giornateTestApp;
+  }
+  getGiornatePubblicazioneApp(): number {
+    return this.tariffaGiornaliera * this.giornatePubblicazioneApp;
+  }
+  getPreventivoMobile(): number {
+    return (
+      this.getGiornateMockup() +
+      this.getGiornateDatabase() +
+      this.getGiornateIntegrazioneServiziWeb() +
+      this.getGiornateTestApp() +
+      this.getGiornatePubblicazioneApp()
+    );
   }
 }
-
-let account = new Account(0, "Personale");
-let bank = account.getTotalAccount();
-let newName = (account.nameAccount = "Work");
-console.log(newName);
+let mobile = new MainPreventivoMobile(5, 3, 1, 1, 1, 250);
+let app = mobile.getPreventivoMobile();
+console.log("PREVENTIVO APP MOBILE :" + app + " €");

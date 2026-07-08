@@ -27,6 +27,7 @@
            // getter& setter
            
            // metodi
+           
 
            getRedditoImponnibile():number{
 
