@@ -1,0 +1,27 @@
+export const Footer = () => {
+  return (
+    
+      <footer className="footer-container">
+        
+        {/* Usiamo la classe flex con il gap corretto */}
+        <div className="footer-links">
+          <ul>
+            <li><a href="#">scopri</a></li>
+            <li><a href="#">Spring</a></li>
+          </ul>
+          <ul>
+            <li><a href="#">contatti</a></li>
+            <li><a href="#">React Native</a></li>
+          </ul>
+          <ul>
+            <li><a href="#">registrati</a></li>
+            <li><a href="#">java</a></li>
+          </ul>
+        </div>
+
+        {/* Classe specifica per il copyright con la linea divisoria */}
+        <p className="footer-copyright">by John parker © 2026</p>
+      </footer>
+  
+  );
+};

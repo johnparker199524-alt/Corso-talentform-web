@@ -1,0 +1,51 @@
+/* Contenitore principale del footer */
+.footer-container {
+  box-sizing: border-box;  
+  background-color: #2a2424; /* Un marrone/antracite scuro che sta meglio con la dark mode */
+  padding: 30px 20px;
+  font-family: 'Segoe UI', sans-serif;
+  color: #ffffff;
+}
+
+/* La sezione che contiene le 3 liste di link */
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 60px; /* Spazio uniforme tra una lista e l'altra */
+  margin-bottom: 20px;
+}
+
+/* Rimuove i pallini e resetta i margini delle liste */
+.footer-links ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Stile per i link */
+.footer-links a {
+  text-decoration: none;
+  color: #a0a0a5; /* Grigio chiaro di base */
+  transition: all 0.2s ease;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+/* Effetto Hover sui link */
+.footer-links a:hover {
+  background-color: rgba(219, 76, 76, 0.2); /* Sfondo rosso semitrasparente molto più elegante */
+  color: #db4c4c; /* Il testo diventa rosso acceso */
+}
+
+/* Stile per il testo del copyright */
+.footer-copyright {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #707075;
+  border-top: 1px solid rgba(255, 255, 255, 0.1); /* Una linea sottile di separazione */
+  padding-top: 15px;
+  margin: 0;
+}
+a:hover {
+  background-color: rgb(219, 76, 76);
+}
