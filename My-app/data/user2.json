@@ -1,0 +1,37 @@
+[
+  {
+    "id": "usr_01J2A",
+    "nome": "Alessandro Rossi",
+    "eta": 28,
+    "citta": "Milano",
+    "nazione": "Italia"
+  },
+  {
+    "id": "usr_02K3B",
+    "nome": "Giulia Bianchi",
+    "eta": 34,
+    "citta": "Roma",
+    "nazione": "Italia"
+  },
+  {
+    "id": "usr_03L4C",
+    "nome": "Lucas Meyer",
+    "eta": 25,
+    "citta": "Berlino",
+    "nazione": "Germania"
+  },
+  {
+    "id": "usr_04M5D",
+    "nome": "Emma Watson",
+    "eta": 31,
+    "citta": "Londra",
+    "nazione": "Regno Unito"
+  },
+  {
+    "id": "usr_05N6E",
+    "nome": "Chloe Dubois",
+    "eta": 29,
+    "citta": "Parigi",
+    "nazione": "Francia"
+  }
+]

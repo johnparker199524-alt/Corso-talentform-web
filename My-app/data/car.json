@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "brand": "Tesla",
+    "model": "Model 3",
+    "electric": true
+  },
+  {
+    "id": 2,
+    "brand": "Toyota",
+    "model": "Corolla",
+    "electric": false
+  },
+  {
+    "id": 3,
+    "brand": "Hyundai",
+    "model": "Ioniq 5",
+    "electric": true
+  },
+  {
+    "id": 4,
+    "brand": "Fiat",
+    "model": "500e",
+    "electric": true
+  }
+]

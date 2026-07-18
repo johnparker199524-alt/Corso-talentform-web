@@ -1,0 +1,111 @@
+import ListCar from "./ListCar";
+    const Car = () => {
+    const car = [
+        {
+    pic: "/audi.jpg",
+    brand: "Audi",
+    model: "A1",
+    color:"Nero",
+    year:2026,
+},
+        {
+    pic: "/panda.jpg",
+    brand: "Fiat",
+    model: "Panda",
+    color:"Bianco",
+    year:2023,
+},
+        {
+    pic: "/500.jpg",
+    brand: "Fiat",
+    model: "500",
+    color:"Arancione",
+    year:2022,
+},
+        {
+    pic: "/toyota.jpg",
+    brand: "Toyota",
+    model: "Arys",
+    color:"Nero",
+    year:2025,
+},
+    ];
+
+    return (
+        <div>
+            <div>
+                <ListCar array={car}/>
+            </div>
+        </div>
+    )
+}
+export default Car
+listCar
+import PropsCar from "./PropsCar";
+import { ICar } from "../model/ICar";
+
+type car = ICar[];
+const ListCar: React.FC<{array: car}> = (props) => {
+    return (
+        <div>
+        <PropsCar
+        pic = { props.array[0].pic}
+        brand = {props.array[0].brand}
+        model = { props.array[0].model}
+        color = { props.array[0].color}
+        year = { props.array[0].year}
+            />
+
+        <PropsCar
+        pic = { props.array[1].pic}
+        brand = {props.array[1].brand}
+        model = { props.array[1].model}
+        color = { props.array[1].color}
+        year = { props.array[1].year}
+            />
+        <PropsCar
+        pic = { props.array[2].pic}
+        brand = {props.array[2].brand}
+        model = { props.array[2].model}
+        color = { props.array[2].color}
+        year = { props.array[2].year}
+            />
+        <PropsCar
+        pic = { props.array[3].pic}
+        brand = {props.array[3].brand}
+        model = { props.array[3].model}
+        color = { props.array[3].color}
+        year = { props.array[3].year}
+            />      
+        </div>
+    )
+}
+
+export default ListCar;
+propsCar
+import { ICar } from "../model/ICar";
+const PropsCar: React.FC<ICar> = (props) => {
+  return (
+    <div>
+      <div>
+        <img src={props.pic} alt={props.brand} height={150}></img>
+        <ul style={{marginTop: "5%"}}>
+          <li>{props.brand}</li>
+          <li>{props.color}</li>
+          <li> {props.model}</li>
+          <li>{props.year}</li>
+        </ul>
+      </div>
+    </div>
+  );
+};
+
+export default PropsCar;
+ICar
+export interface ICar {
+    pic?:string;
+    brand?: string;
+    model?: string;
+    color?: string;
+    year? : number
+}

@@ -1,0 +1,41 @@
+Crea un componente Persona che riceva tramite props il 
+nome di una persona.
+Il componente deve visualizzare:
+Ciao Mario!
+Nel componente App crea il componente Persona passando il
+ nome "Mario". Utilizza un interfaccia per definire la
+  proprieta'
+Crea un componente Studente.
+Il componente deve ricevere tramite props:
+•	nome 
+•	età 
+Visualizza:
+Nome: Luca
+Età: 22
+Utilizza un interfaccia per definire la proprieta'
+
+DOCENTE FABIO DI GLORIA
+09:37
+Creare una scheda cliente
+Traccia
+Crea un componente Cliente.
+Il componente deve ricevere tramite props:
+•	nome 
+•	cognome 
+•	città 
+Visualizza una piccola scheda con 
+tutte le informazioni.
+Utilizza un interfaccia per definire le proprieta'
+
+---
+Crea un componente Prodotto.
+Il componente riceve:
+•	nome : string
+•	colore : string
+•	prezzo :number
+•	disponibilita’ : boolean
+Visualizza:
+Nome: Notebook
+Colore: Nero
+Prezzo : 799,00 €
+Disponibilita: true

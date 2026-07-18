@@ -1,0 +1,67 @@
+/* Stile per il contenitore principale della card */
+.gioco-card {
+  background-color: #1a1a1e; /* Sfondo scuro della card */
+  border: 1px solid #2a2a30;    /* Un leggero bordo per dare definizione */
+  border-radius: 12px;          /* Bordi arrotondati moderni */
+  padding: 20px;
+  margin: 15px 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Ombra morbida */
+  transition: transform 0.2s ease; /* Animazione quando passi il mouse */
+}    
+h1{
+  color: #22c55e;
+
+}
+/* Effetto al passaggio del mouse (Hover) */
+.gioco-card:hover {
+  transform: translateY(-5px); /* La card si solleva leggermente */
+  border-color: #6366f1;       /* Il bordo diventa viola */
+}
+
+/* Stile del titolo del gioco */
+.gioco-titolo {
+  margin: 0 0 10px 0;
+  font-size: 1.4rem;
+  color: #ffffff;
+}
+/* Stile per la piattaforma */
+.gioco-piattaforma {
+  color: #a0a0a5;
+  font-size: 0.9rem;
+  text-transform: uppercase; /* Scrive PS5, PC tutto in maiuscolo automaticamente */
+  letter-spacing: 1px;       /* Spazia leggermente le lettere */
+}
+/* Stile per il voto */
+.gioco-voto {
+  display: inline-block;
+  background-color: rgba(99, 102, 241, 0.15); /* Sfondo viola semitrasparente */
+  color: #6366f1;                             /* Testo viola acceso */
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+/* Classi di utilità per la disponibilità */
+.disponibile {
+  color: #22c55e; /* Verde */
+  font-weight: 500;
+}
+
+.esaurito {
+  color: #ef4444; /* Rosso */
+  font-weight: 500;
+}
+/* Da mettere ad esempio nel CSS globale o applicare al div di App */
+.app-container {
+  background-color: #121214;
+  min-height: 100vh;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.noStyle{
+     list-style-type: none;
+}

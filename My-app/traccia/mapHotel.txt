@@ -1,0 +1,101 @@
+/*
+/* Traccia
+Creare una lista di hotel.
+Ogni hotel contiene:
+•	id 
+•	picture 
+•	nome 
+•	type 
+•	room_type 
+•	room_available 
+•	price_room_day 
+Visualizzare tutti gli hotel tramite map().
+
+Rosa Colonna
+12:54 
+
+*/
+import ListHotel from "./ListHotel";
+
+const Hotel = () => {
+  const hotels = [
+    {
+      pic: "/hotelCavalieri.jpg",
+     nome: "Hotel dei Cavalieri",
+  type: "4 stelle",
+  room_type: "camera singola",
+  room_available: 203,
+  price_room_day: 50,
+},
+
+    {
+      pic: "/hotelpresidente.jpg",
+     nome: "Hotel Presidente",
+  type: "5 stelle",
+  room_type: "camera doppia",
+  room_available: 100,
+  price_room_day: 100,
+    },
+   
+  ];
+
+  return (
+    <div>
+      <ListHotel items={hotels} />
+    </div>
+  );
+};
+
+export default Hotel;
+import { IHotel } from "../model/IHotel";
+import PropsHotel from "./PropsHotel";
+
+type Items = IHotel[];
+
+const ListHotel: React.FC<{ items: Items }> = (props) => {
+  return (
+    <div>
+      {props.items.map((hotel) => (
+        <PropsHotel
+          key={hotel.id}
+          pic={hotel.pic}
+          nome={hotel.nome}
+          type={hotel.type}
+          room_type={hotel.room_type}
+          room_available={hotel.room_available}
+          price_room_day={hotel.price_room_day}
+        />
+      ))}
+    </div>
+  );
+};
+
+export default ListHotel;
+import { IHotel } from "../model/IHotel";
+
+
+const PropsHotel: React.FC<IHotel> = (props) => {
+  return (
+    <div>
+    <img src={props.pic} alt={props.nome} height={150} />
+      <p>{props.nome}</p>
+      <h3>{props.type}</h3>
+      <h4>{props.room_type}</h4>
+      <h5>{props.room_available}</h5>
+      <h6>{props.price_room_day}</h6>
+    </div>
+  );
+};
+
+export default PropsHotel;
+export interface IHotel {
+  id?: number;
+  pic?: string;
+  nome?: string;
+  type?: string;
+  room_type?: string;
+  room_available?: number;
+  price_room_day?: number;
+}
+
+*/

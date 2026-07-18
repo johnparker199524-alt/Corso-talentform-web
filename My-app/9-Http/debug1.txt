@@ -1,0 +1,77 @@
+===================================================================
+REPORT TECNICO: RISOLUZIONE BUG DI COMPILAZIONE - MODULO 9-HTTP
+===================================================================
+
+Gentile Capoprogetto,
+di seguito viene documentata la risoluzione dei problemi di compilazione TypeScript 
+riscontrati nel modulo "9-Http" dell'applicazione (generata con CRA e template TypeScript).
+Gli interventi sono stati eseguiti con un approccio conservativo, mantenendo intatta
+la struttura logica originale del codice.
+
+-------------------------------------------------------------------
+1. ERRORE: Mancanza del modulo 'axios' (TS2307) e aggiornamento Import
+-------------------------------------------------------------------
+* Posizione: 
+  - src/9-Http/01-sending-a-get-request/HttpRequest.tsx
+  - src/9-Http/01-sending-a-get-request/test/HttpGetRequest.tsx
+  - src/9-Http/02-handling-loading-and-data-states/HttpRequestHandling.tsx
+  - src/9-Http/03-using-useeffect/HttpRequestUseEffect.tsx
+  - src/9-Http/04-sending-a-post-request/HttpRequestPost.tsx
+
+* Causa: La libreria Axios non era installata nel local environment o presentava 
+  un nome errato nel package.json.
+* Soluzione: 
+  1. Eseguita installazione pulita del pacchetto tramite npm:
+     $ npm install axios
+  2. Aggiornati e sostituiti i vecchi import di Axios nei file principali e di test 
+     per includere esplicitamente il supporto ai tipi di risposta:
+     - Vecchio import: import axios from "axios";
+     - Nuovo import:   import axios, { AxiosResponse } from "axios";
+
+-------------------------------------------------------------------
+2. ERRORE: Tipo 'any' implicito sul parametro della Promise (TS7006)
+-------------------------------------------------------------------
+* Posizione 1: src/9-Http/01-sending-a-get-request/HttpRequest.tsx (Riga 13)
+  - Codice originale: .then((response) => { ... })
+  - Soluzione applicata: Assegnazione esplicita del tipo 'any' per ignorare il 
+    controllo strict della configurazione e preservare la sintassi originale:
+    .then((response: any) => {
+
+* Posizione 2: src/9-Http/01-sending-a-get-request/test/HttpGetRequest.tsx (Riga 12)
+  - Codice originale: .then((response) => { ... })
+  - Soluzione applicata: Allineamento con lo stesso fix del file principale per 
+    garantire la compilazione dei test:
+    .then((response: any) => {
+
+-------------------------------------------------------------------
+3. ERRORE: Risoluzione delle dichiarazioni dei moduli CSS
+-------------------------------------------------------------------
+* Posizione: Importazione dei file .css nei componenti (es. './HttpRequest.css')
+* Causa: TypeScript non riconosce i file non-JS/TS come moduli validi senza una 
+  dichiarazione di tipo globale.
+* Soluzione: È stato creato/aggiornato il file di configurazione globale nella root 
+  del progetto per istruire il compilatore sulla gestione dei fogli di stile:
+  
+  File: src/react-app-env.d.ts
+  Codice aggiunto:
+  declare module "*.css" {
+    const content: { [className: string]: string };
+    export default content;
+  }
+
+-------------------------------------------------------------------
+4. AVVISI (WARNING): Deprecazioni nel file tsconfig.json
+-------------------------------------------------------------------
+* Segnalazione: Il compilatore mostrava due avvisi relativi alla futura 
+  deprecazione di 'target=ES5' e 'moduleResolution=node10' in TypeScript 7.0.
+* Soluzione: Per garantire un output pulito nel terminale senza alterare 
+  la logica di compilazione attuale, è stata introdotta la direttiva di silenziamento:
+  
+  File: tsconfig.json
+  Codice aggiunto in compilerOptions:
+  "ignoreDeprecations": "6.0"
+===================================================================
+STATO ATTUALE:
+Il compilatore Webpack e TypeScript completano il processo con successo.
+Nessun blocco residuo rilevato. L'applicazione è pronta per il testing.
+===================================================================

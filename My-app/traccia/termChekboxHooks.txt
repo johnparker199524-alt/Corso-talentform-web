@@ -1,0 +1,17 @@
+Realizza un componente React chiamato .
+Il componente deve simulare una checkbox per 
+accettare i termini e condizioni di un servizio.
+Deve essere creato uno stato booleano:
+accepted: boolean
+Il valore iniziale deve essere:
+false
+Il componente deve contenere:
+•	una checkbox; 
+•	una scritta "Accetto i termini e condizioni"; 
+•	un testo che visualizza il valore attuale 
+della checkbox. 
+Quando l'utente seleziona o deseleziona la 
+checkbox, lo stato deve aggiornarsi.
+Utilizzare:
+•	useState<boolean>; 
+•	evento onChange.

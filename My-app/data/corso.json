@@ -1,0 +1,17 @@
+[
+  {
+    "id": 101,
+    "titolo": "Introduzione a TypeScript",
+    "postiLiberi": 15
+  },
+  {
+    "id": 102,
+    "titolo": "Sviluppo Web con Angular",
+    "postiLiberi": 5
+  },
+  {
+    "id": 103,
+    "titolo": "UI/UX Design Fundamentals",
+    "postiLiberi": 0
+  }
+]

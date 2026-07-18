@@ -1,0 +1,9 @@
+Realizza un componente chiamato EmailInput.
+Il componente deve contenere un campo input dove l'utente può inserire la propria email.
+Devi creare uno stato:
+email: string
+Il valore iniziale deve essere una stringa vuota.
+Il componente deve:
+•	mostrare il valore inserito dall'utente; 
+•	aggiornare lo stato ad ogni modifica dell'input. 
+Utilizzare un input controllato.

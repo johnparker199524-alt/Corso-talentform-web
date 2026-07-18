@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "Inception",
+    "type": "Sci-Fi",
+    "release": 2010,
+    "image": "fbi.webp",
+    "available": true
+  },
+  {
+    "id": 2,
+    "title": "The Godfather",
+    "type": "Crime",
+    "release": 1972,
+    "image": "hack.webp",
+    "available": false
+  },
+  {
+    "title": "Pulp Fiction",
+    "release": 1994,
+    "image": "lane.webp"
+  },
+  {
+    "id": 4,
+    "title": "Interstellar",
+    "type": "Sci-Fi",
+    "release": 2014,
+    "image": "matrix.webp",
+    "available": true
+  },
+  {
+    "id": 5,
+    "title": "Spirited Away",
+    "type": "Animation",
+    "release": 2001,
+    "image": "robot.webp"
+  }
+]

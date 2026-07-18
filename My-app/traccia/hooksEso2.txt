@@ -1,0 +1,17 @@
+Traccia
+Realizza un componente chiamato UserName.
+Il componente deve permettere all'utente
+ di modificare un nome attraverso un campo
+  input.
+Deve essere presente:
+•	uno stato name; 
+•	un input controllato; 
+•	un titolo che visualizza il nome corrente. 
+Lo stato deve iniziare con:
+Mario
+Quando l'utente scrive nell'input, il
+ valore dello stato deve aggiornarsi 
+ automaticamente.
+Utilizzare:
+•	useState; 
+•	evento onChange.

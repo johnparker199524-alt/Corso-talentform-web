@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "nome": "Marco Bianchi",
+    "oreSettimanali": 40
+  },
+  {
+    "id": 2,
+    "nome": "Giulia Rossi",
+    "oreSettimanali": 36
+  },
+  {
+    "id": 3,
+    "nome": "Luca Verdi",
+    "oreSettimanali": 20
+  }
+]

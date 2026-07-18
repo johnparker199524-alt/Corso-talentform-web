@@ -1,0 +1,18 @@
+Realizza un componente chiamato ColorChanger.
+Il componente deve permettere all'utente di 
+modificare un colore attraverso un campo input.
+Deve essere creato uno stato:
+color: string
+Il valore iniziale deve essere:
+black
+L'utente deve poter scrivere un nuovo colore.
+Il componente deve visualizzare un testo che
+ utilizza il colore scelto.
+Esempio:
+Se l'utente scrive:
+red
+il testo deve diventare rosso.
+Utilizzare:
+•	useState; 
+•	input controllato; 
+•	stile inline React.

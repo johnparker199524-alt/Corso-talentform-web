@@ -1,0 +1,87 @@
+---------------------------- INCOLLO CODICE ESERCIZIO PER MOISE:
+Traccia: Componente StudentList che riceve un array { id: number, nome: string, voto: number } (voto da 0 a 10) e mostra "Promosso" se voto >= 6, altrimenti "Bocciato".
+Student.tsx:
+import StudentList from "./StudentList"
+
+import { IStudent } from "../model/IStudent"
+
+import studentData from '../../data/student.json'
+
+const Student = () => {
+
+    
+  
+    const studenti: IStudent[] = studentData
+            
+
+  return (
+    <div>
+      <StudentList studenti={studenti}/>
+    </div>
+  )
+}
+
+export default Student
+StudentList.tsx:
+import { IStudentList } from "../model/IStudentList";
+
+const PropsIfElse: React.FC<IStudentList> = ({ studenti }) => {
+
+const getEsito = (voto: number): string => {
+  if (voto >= 6) {
+    return "Promosso";
+  } else {
+    return "Bocciato";
+  }
+};
+
+  return (
+    <ul>
+      {studenti?.map((s) => (
+        <li key={s.id}>
+          {s.nome} - {getEsito(s.voto)}
+        </li>
+      ))}
+    </ul>
+  );
+};
+
+export default PropsIfElse;
+IStudent.tsx:
+export interface IStudent {
+    id: number, 
+    nome: string, 
+    voto: number
+}
+IStudentList.tsx:
+import { IStudent } from "./IStudent";
+
+export interface IStudentList {
+    studenti?: IStudent[];
+}
+student.json:
+
+Alessia Carmen Nizeti Panebianco
+14:53
+[
+  {
+    "id": 1,
+    "nome": "Gino",
+    "voto": 10
+  },
+  {
+    "id": 2,
+    "nome": "Pippo",
+    "voto": 6
+  },
+  {
+    "id": 3,
+    "nome": "Mario",
+    "voto": 8
+  },
+  {
+    "id": 4,
+    "nome": "Tizio",
+    "voto": 0
+  }
+]

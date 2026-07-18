@@ -1,0 +1,8 @@
+Realizza un componente chiamato
+ ComputerList. Ogni computer possiede: 
+ • id  • brand  • ram  • price 
+  Visualizza tutti i computer. 
+  Se la RAM è almeno 16 GB, mostra:
+   Prestazioni elevate 
+   Altrimenti: Prestazioni standard 
+   - Utilizza Map e il json per i dati

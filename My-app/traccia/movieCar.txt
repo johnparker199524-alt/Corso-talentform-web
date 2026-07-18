@@ -1,0 +1,28 @@
+Nel componente Movie mostra un array di  json con 
+almeno 5 film.
+Ogni film deve contenere le seguenti proprietà:
+•	id 
+•	title 
+•	type 
+•	release 
+•	image 
+•	available (boolean) 
+Passa ogni film al componente MovieCard utilizzando
+ le props.
+Nel componente MovieCard visualizza:
+•	l'immagine del film; 
+•	il titolo; 
+•	il genere; 
+•	l'anno di uscita. 
+Successivamente utilizza due operatori ternari.
+Il primo deve verificare se il film è stato pubblicato 
+dal 2020 in poi.
+Se sì visualizza:
+Film recente
+altrimenti
+"Film classico
+Il secondo deve verificare se il film è disponibile.
+Se disponibile mostra:
+
+altrimenti
+Non disponibile

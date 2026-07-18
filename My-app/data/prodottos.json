@@ -1,0 +1,42 @@
+[
+  {
+    "brand": "Fiat",
+    "picture": "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2",
+    "model": "500e",
+    "color": "Rose Gold",
+    "price": 29500,
+    "dispo": true
+  },
+  {
+    "brand": "Alfa Romeo",
+    "picture": "https://images.unsplash.com/photo-1511919884226-fd3cad34687c",
+    "model": "Giulia Veloce",
+    "color": "Rosso Alfa",
+    "price": 48000,
+    "dispo": false
+  },
+  {
+    "brand": "Tesla",
+    "picture": "https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e",
+    "model": "Model 3",
+    "color": "Solid Black",
+    "price": 42490,
+    "dispo": true
+  },
+  {
+    "brand": "Audi",
+    "picture": "https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5",
+    "model": "A3 Sportback",
+    "color": "Grigio Daytona",
+    "price": 36500,
+    "dispo": true
+  },
+  {
+    "brand": "BMW",
+    "picture": "https://images.unsplash.com/photo-1555215695-3004980ad54e",
+    "model": "Serie 1",
+    "color": "Alpine White",
+    "price": 31200,
+    "dispo": false
+  }
+]

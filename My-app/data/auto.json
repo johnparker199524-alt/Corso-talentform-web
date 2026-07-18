@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "picture": "/fiat.webp",
+    "brand": "Fiat",
+    "color": "Rosso",
+    "model": "500",
+    "year": 2020
+  },
+  {
+    "id": 2,
+    "picture": "/tesla.webp",
+    "brand": "Tesla",
+    "color": "Bianco",
+    "model": "Model 3",
+    "year": 2023
+  },
+  {
+    "id": 3,
+    "picture": "/audi.webp",
+    "brand": "Audi",
+    "color": "Nero",
+    "model": "A3",
+    "year": 2021
+  },
+  {
+    "id": 4,
+    "picture": "/toyota.webp",
+    "brand": "Toyota",
+    "color": "Grigio",
+    "model": "Yaris",
+    "year": 2022
+  }
+]

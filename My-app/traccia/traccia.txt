@@ -1,0 +1,19 @@
+// Traccia
+// Realizza un componente chiamato CarList.
+// Nel componente padre crea un array contenente
+ almeno 5 automobili.
+// Ogni automobile deve avere:
+// •	id 
+// •	brand 
+// •	model 
+// •	electric (boolean) 
+// Visualizza tutte le automobili con map().
+// Per ogni automobile mostra:
+// •	marca; 
+// •	modello. 
+// Successivamente controlla se l'automobile è
+ elettrica.
+// Se electric è true, visualizza:
+// Auto elettrica
+// Altrimenti visualizza:
+// Auto tradizionale

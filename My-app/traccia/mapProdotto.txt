@@ -1,0 +1,91 @@
+export interface IProdotto {
+  id?: number;
+  picture?: string;
+  title?: string;
+  category?: string;
+  brand?: string;
+  release?: number;
+  price?: number;
+}
+import { IProdotto } from "./model/IProdotto";
+
+const PropsProdotto: React.FC<IProdotto> = (props) => {
+  return (
+    <div>
+      <img src={props.picture} alt={props.title} height={150} />
+      <h2>{props.title}</h2>
+          <h3>{props.category}</h3>
+           <h3>{props.brand}</h3>
+      <h4>{props.price} €</h4>
+      <h5>{props.release}</h5>
+    </div>
+  );
+};
+
+export default PropsProdotto;
+import { IProdotto } from "./model/IProdotto";
+import PropsProdotto from "./PropsProdotto";
+
+type Items = IProdotto[];
+
+const ListProdotto: React.FC<{ product: Items }> = (props) => {
+  return (
+    <div>
+      {props.product.map((prodotto) => (
+        <PropsProdotto
+          key={prodotto.id}
+          picture={prodotto.picture}
+          title={prodotto.title}
+          category={prodotto.category}
+          brand={prodotto.brand}
+          price={prodotto.price}
+          release={prodotto.release}
+        />
+      ))}
+    </div>
+  );
+};
+
+export default ListProdotto;
+import ListProdotto from "./ListProdotto";
+
+const Prodotto = () => {
+  const prodotti = [
+    {
+      id: 1,
+      picture: "/samsung1.jpg",
+      title: "Samsung S25",
+      category: "Telefonia",
+      brand: "Samsung",
+      price: 599.00,
+      release: 2024,
+    },
+
+    {
+      id: 2,
+      picture: "/samsung2.jpeg",
+      title: "Samsung S26",
+      category: "Telefonia",
+      brand: "Samsung",
+      price: 699.00,
+      release: 2026,
+    },
+    {
+      id: 3,
+      picture: "/samsung3.jpeg",
+      title: "Samsung S24",
+      category: "Telefonia",
+      brand: "Samsung",
+      price: 499.00,
+      release: 2024,
+    },
+  ];
+
+  return (
+    <div>
+      <ListProdotto product={prodotti} />
+    </div>
+  );
+};
+
+export default Prodotto;

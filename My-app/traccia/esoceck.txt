@@ -1,0 +1,20 @@
+Realizza un componente React chiamato
+ NumberCheck.
+Il componente deve ricevere tramite 
+props un valore numerico:
+number: number
+Questo valore rappresenta un numero 
+intero inserito dall'utente.
+Il componente deve controllare 
+se il numero ricevuto è pari oppure dispari.
+La regola da applicare è:
+•	se il numero è divisibile per 2 
+senza resto mostra: 
+Numero pari
+•	se il numero non è divisibile
+ per 2 mostra: 
+Numero dispari
+Il componente deve visualizzare anche
+ il numero ricevuto.
+La scelta del messaggio deve essere 
+realizzata utilizzando l'operatore ternario.
