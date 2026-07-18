@@ -1,7 +1,8 @@
 /* Contenitore principale del footer */
-.footer-container {
+.footer-container {  
+  
   box-sizing: border-box;  
-  background-color: #2a2424; /* Un marrone/antracite scuro che sta meglio con la dark mode */
+  background-color: #947777; /* Un marrone/antracite scuro che sta meglio con la dark mode */
   padding: 30px 20px;
   font-family: 'Segoe UI', sans-serif;
   color: #ffffff;
