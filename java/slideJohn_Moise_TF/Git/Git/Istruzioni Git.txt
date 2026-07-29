@@ -1,0 +1,41 @@
+git clone
+mkdir cartella
+cd cartella/
+cd .. (uscire dalla folder)
+ls
+file.txt
+git status
+git add file.txt
+git commit -m "esercizi"
+git push -u origin master
+
+
+GIT 
+
+CREARE FOLDER SU DESKTOP
+cd Desktop->touch index.html(crea file)
+git init(inizializza il repository locale)->
+git config --local user.name ""
+git config --local user.email ""
+git status (stato repository)
+git add index.html(aggiunge il file nella staging area  
+git add .(aggiunge tutti i files nella folder)
+git ls-files
+git clear(pulisce repository)
+git status
+git rm--cached index.html(rimuove file dalla staging area)
+git commit -m "esercizi" (validare il file nella staging area)
+git checkout -- index.html
+git branch (rami del repository)
+git branch feature(crea un nuovo ramo con nome feature)
+git checkout feature(passa al ramo feature)
+git checkout master(per tornare al ramo principale)
+git merge(unisce i due rami master e feature)
+git log(mostra tutti i commit)
+git remote add origin URL
+git remote -v(collegamento con github o bitbucket)
+git push -u origin master
+git pull (prelevare il file aggiornato)
+git clone URL (clonare un progetto remote all'interno di una folder desktop)
+
+
